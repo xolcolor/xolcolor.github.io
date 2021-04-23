@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>XOLCOLOR</title>
+        <meta name="viewport" content="initial-scale=0.8, maximum-scale=1.0, width=device-width, user-scalable=no" />
+        <style>
+            body {
+                font-family: serif;
+                margin: 30px;
+            }
+
+            /* highlighting */
+            .code-block {
+                color:#93a1a1;
+            }
+            .code-block-container {
+                background-color: #002b36;
+                padding: 10px 100px 10px 20px;
+                border:1px solid black;
+                width: max-content;
+            }
+            .instruction {
+                font-weight:bold;
+                color: #93a1a1;
+            }
+            .assembler-instruction {
+                color: #268bd2;
+            }
+            .number {
+                color: #2aa198;
+            }
+            .register {
+                color: #6c71c4;
+            }
+            .symbol {
+                color: #2aa198;
+            }
+            .comment {
+                color: #657b83;
+            }
+            .label {
+                color: #b58900;
+            }
+            .string {
+                color: #2aa198;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>hello world for msdos (nasm)</h2>
+        <p>by xolcolor</p>
+
+        <!-- BEGIN CODE BLOCK -->
+        <div class=code-block-container>
+            <pre class=code-block><span class=assembler-instruction>org</span> <span class=number>100h</span>
+<span class=assembler-instruction>section</span> .text
+
+<span class=label>.start:</span>
+    <span class=instruction>mov</span> <span class=register>dx</span><span class=symbol>,</span> helloworld <span class=comment>; string ptr	</span>
+    <span class=instruction>mov</span> <span class=register>ah</span><span class=symbol>,</span> <span class=number>09h</span>    <span class=comment>; write to stdout</span>
+    <span class=instruction>int</span> <span class=number>21h</span>
+    
+    <span class=instruction>mov</span> <span class=register>al</span><span class=symbol>,</span> <span class=number>0</span>      <span class=comment>; return code</span>
+    <span class=instruction>mov</span> <span class=register>ah</span><span class=symbol>,</span> <span class=number>4Ch</span>    <span class=comment>; program exit</span>
+    <span class=instruction>int</span> <span class=number>21h</span>
+
+<span class=assembler-instruction>section</span> .data
+
+<span class=label>helloworld:</span> <span class=assembler-instruction>db</span> <span class=string>"xolcolor was here$"</span></pre>
+        </div>
+        <!-- END CODE BLOCK -->
+         <!--Initially generated at tohtml.com, edited by xolcolor -->
+        <br/>
+        <p><em>thank you for watching.</em></p>
+    </body>
+</html>
